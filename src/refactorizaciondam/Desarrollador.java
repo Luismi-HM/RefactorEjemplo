@@ -28,8 +28,12 @@ public class Desarrollador extends Empleado {
     }
 
     @Override
-    public void mostrarResumen() {
+    public void mostrarInfo() {
         System.out.println("Desarrollador: " + nombre + " | Lenguaje: " + lenguajePrincipal +
                 " | Salario: " + calcularSalario());
+    }
+
+    public void realizarTareaTecnica() {
+        System.out.println(nombre + " está realizando una tarea técnica.");
     }
 }

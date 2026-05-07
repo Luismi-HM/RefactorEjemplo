@@ -5,16 +5,16 @@ import java.util.List;
 
 public class Proyecto {
     private String nombreProyecto;
-    private List<Empleado> empleados;
+    private List<Trabajable> empleados;
 
     public Proyecto(String nombreProyecto) {
         this.nombreProyecto = nombreProyecto;
         this.empleados = new ArrayList<>();
     }
 
-    public void agregarEmpleado(Empleado empleado) {
-        if (empleado != null) {
-            empleados.add(empleado);
+    public void agregarEmpleado(Trabajable trabajable) {
+        if (trabajable != null) {
+            empleados.add(trabajable);
         }
     }
 
@@ -22,7 +22,7 @@ public class Proyecto {
         System.out.println("Proyecto: " + nombreProyecto);
         for (int i = 0; i < empleados.size(); i++) {
             Empleado empleado = empleados.get(i);
-            empleado.mostrarResumen();
+            empleado.mostrarInfo();
         }
     }
 
@@ -42,9 +42,9 @@ public class Proyecto {
         }
     }
 
-    public Empleado buscarEmpleadoPorId(int id) {
+    public Trabajable buscarEmpleadoPorId(int id) {
         for (int i = 0; i < empleados.size(); i++) {
-            if (empleados.get(i).getIdEmpleado() == id) {
+            if (empleados.get(i).getCodEmpleado() == id) {
                 return empleados.get(i);
             }
         }
@@ -93,7 +93,7 @@ public class Proyecto {
             Empleado empleado = empleados.get(i);
             if (empleado.calcularSalario() > salario) {
                 if (empleado != null) {
-                    empleado.mostrarResumen();
+                    empleado.mostrarInfo();
                 }
             }
         }

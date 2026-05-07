@@ -1,17 +1,17 @@
 package refactorizaciondam;
 
-public class Empleado extends Persona {
-    protected int idEmpleado;
+public class Empleado extends PersonaBase implements Trabajable {
+    protected int codEmpleado;
     protected double salarioBase;
 
     public Empleado(String nombre, String dni, int idEmpleado, double salarioBase) {
         super(nombre, dni);
-        this.idEmpleado = idEmpleado;
+        this.codEmpleado = idEmpleado;
         this.salarioBase = salarioBase;
     }
 
-    public int getIdEmpleado() {
-        return idEmpleado;
+    public int getCodEmpleado() {
+        return codEmpleado;
     }
 
     public double getSalarioBase() {
@@ -22,7 +22,13 @@ public class Empleado extends Persona {
         return salarioBase;
     }
 
-    public void mostrarResumen() {
-        System.out.println("Empleado: " + nombre + " | ID: " + idEmpleado + " | Salario: " + calcularSalario());
+    public void mostrarInfo() {
+        System.out.println("Empleado: " + nombre + " | ID: "
+                + codEmpleado + " | Salario: " + calcularSalario());
     }
+
+    public void ficharEntrada(int hora, int min) {
+        System.out.println(nombre + "ha fichado a las " + hora + " - " + min);
+    }
+
 }

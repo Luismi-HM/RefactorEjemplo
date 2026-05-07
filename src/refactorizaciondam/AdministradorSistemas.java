@@ -28,8 +28,12 @@ public class AdministradorSistemas extends Empleado {
     }
 
     @Override
-    public void mostrarResumen() {
+    public void mostrarInfo() {
         System.out.println("Administrador: " + nombre + " | Servidores: " + numeroServidores +
                 " | Salario: " + calcularSalario());
+    }
+
+    public void realizarTareaTecnica() {
+        System.out.println(nombre + " está realizando una tarea técnica.");
     }
 }
